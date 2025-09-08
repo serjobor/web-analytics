@@ -1,0 +1,125 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.row {
+    display: flex;
+    gap: 6px;
+    margin: 4px 0;
+}
+
+.char {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 44px;
+    padding: 0 10px;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    color: #e5e7eb;
+    background: #1f2937;
+}
+
+.char:active {
+    background-color: #111827;
+}
+
+.formCard {
+    width: 100%;
+    max-width: 720px;
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #9ca3af;
+    margin-bottom: 8px;
+}
+
+.textInput {
+    width: 100%;
+    max-width: 640px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #374151;
+    background: #0b1220;
+    color: #e5e7eb;
+    outline: none;
+}
+
+.section {
+    width: 100%;
+    max-width: 640px;
+    padding: 16px;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    background: #0b1220;
+}
+
+.sectionTitle {
+    margin: 0 0 12px 0;
+    color: #e5e7eb;
+}
+
+.rangeLine {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.range {
+    width: 100%;
+}
+
+.rangeLabelLine {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    color: #9ca3af;
+}
+
+.submitButton {
+    margin-top: 16px;
+    padding: 10px 16px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitButton:hover {
+    background: #1d4ed8;
+}
+
+.submitButton:active {
+    background: #1e40af;
+}
