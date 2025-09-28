@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A/B testing</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-content">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <p class="loading-text">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loading functionality
+        window.addEventListener('load', function () {
+            const loadingScreen = document.getElementById('loading-screen');
+
+            // Show loading for 5 seconds
+            setTimeout(function () {
+                loadingScreen.style.opacity = '0';
+
+                middleware();
+
+                setTimeout(function () {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        function middleware() {
+            // Получаем или устанавливаем вариант для пользователя
+            // let variant = localStorage.getItem('ab-variant');
+            let variant;
+
+            if (!variant) {
+                // Случайно назначаем вариант A или B (50/50)
+                variant = Math.random() < 0.5 ? 'a' : 'b'
+            }
+
+            localStorage.setItem('ab-variant', variant);
+
+            if (variant === 'a') {
+                // a page
+                window.location.href = '/a-site/index.html';
+                // window.location.replace('http://127.0.0.1:5500/a-site/index.html');
+            }
+
+            if (variant === 'b') {
+                // b page
+                window.location.href = '/b-site/index.html';
+                // window.location.replace('http://127.0.0.1:5500/b-site/index.htm');
+            }
+        }
+    </script>
+</body>
+
+</html>
