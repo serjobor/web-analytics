@@ -194,3 +194,9 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+@media (width < 600px) {
+    nav {
+        display: none;
+    }
+}
